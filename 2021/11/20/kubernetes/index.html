@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.8.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="安装kubernetes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="kubernetes">
+<meta property="og:url" content="http://example.com/2021/11/20/kubernetes/index.html">
+<meta property="og:site_name">
+<meta property="og:description" content="安装kubernetes">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-11-20T06:15:41.000Z">
+<meta property="article:modified_time" content="2021-11-20T06:16:30.382Z">
+<meta property="article:author" content="yex">
+<meta property="article:tag" content="k8s">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2021/11/20/kubernetes/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2021/11/20/kubernetes/","path":"2021/11/20/kubernetes/","title":"kubernetes"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>kubernetes | </title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title"></h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85kubernetes"><span class="nav-number">1.</span> <span class="nav-text">安装kubernetes</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">yex</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/20/kubernetes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="yex">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          kubernetes
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-11-20 14:15:41 / Modified: 14:16:30" itemprop="dateCreated datePublished" datetime="2021-11-20T14:15:41+08:00">2021-11-20</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="安装kubernetes"><a href="#安装kubernetes" class="headerlink" title="安装kubernetes"></a>安装kubernetes</h2><span id="more"></span>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line">cat &lt;&lt;<span class="string">EOF | sudo tee /etc/yum.repos.d/kubernetes.repo</span></span><br><span class="line"><span class="string">[kubernetes]</span></span><br><span class="line"><span class="string">name=Kubernetes</span></span><br><span class="line"><span class="string">baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-\$basearch</span></span><br><span class="line"><span class="string">enabled=1</span></span><br><span class="line"><span class="string">gpgcheck=1</span></span><br><span class="line"><span class="string">repo_gpgcheck=1</span></span><br><span class="line"><span class="string">gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg</span></span><br><span class="line"><span class="string">exclude=kubelet kubeadm kubectl</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 阿里源</span></span><br><span class="line">cat &lt;&lt;<span class="string">EOF &gt; /etc/yum.repos.d/kubernetes.repo</span></span><br><span class="line"><span class="string">[kubernetes]</span></span><br><span class="line"><span class="string">name=Kubernetes</span></span><br><span class="line"><span class="string">baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/</span></span><br><span class="line"><span class="string">enabled=1</span></span><br><span class="line"><span class="string">gpgcheck=1</span></span><br><span class="line"><span class="string">repo_gpgcheck=1</span></span><br><span class="line"><span class="string">gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将 SELinux 设置为 permissive 模式（相当于将其禁用）</span></span><br><span class="line">sudo setenforce 0</span><br><span class="line">sudo sed -i <span class="string">&#x27;s/^SELINUX=enforcing$/SELINUX=permissive/&#x27;</span> /etc/selinux/config</span><br><span class="line"></span><br><span class="line">sudo yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes</span><br><span class="line"></span><br><span class="line">sudo systemctl <span class="built_in">enable</span> --now kubelet</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#安装docker</span></span><br><span class="line"><span class="comment">##1. 安装工具包并设置库</span></span><br><span class="line"></span><br><span class="line">   sudo yum install -y yum-utils </span><br><span class="line">   </span><br><span class="line">   sudo yum-config-manager \</span><br><span class="line">       --add-repo \</span><br><span class="line">       https://download.docker.com/linux/centos/docker-ce.repo</span><br><span class="line"></span><br><span class="line"><span class="comment">#2.安装docker</span></span><br><span class="line">   sudo yum install -y docker-ce docker-ce-cli containerd.io</span><br><span class="line">   </span><br><span class="line"><span class="comment">#3.使用docker</span></span><br><span class="line">   <span class="comment"># 1 启动</span></span><br><span class="line">   sudo systemctl start docker</span><br><span class="line">   </span><br><span class="line">   <span class="comment"># 2 设置docker开机启动</span></span><br><span class="line">   sudo systemctl <span class="built_in">enable</span> docker</span><br><span class="line">   </span><br><span class="line">   <span class="comment"># 3 设置国内镜像仓库</span></span><br><span class="line">   <span class="comment"># 创建文件</span></span><br><span class="line">   sudo mkdir -p /etc/docker</span><br><span class="line">   <span class="comment"># 修改配置, 设置镜像</span></span><br><span class="line"> sudo tee /etc/docker/daemon.json &lt;&lt;-<span class="string">&#x27;EOF&#x27;</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://vw9qapdy.mirror.aliyuncs.com&quot;</span>],</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line">   <span class="comment"># 重启后台线程</span></span><br><span class="line">   sudo systemctl daemon-reload</span><br><span class="line">   <span class="comment"># 重启docker</span></span><br><span class="line">   sudo systemctl restart docker</span><br><span class="line"></span><br><span class="line">   </span><br><span class="line"></span><br><span class="line"><span class="comment">#preflight issuses     安装日志 /var/log/messages</span></span><br><span class="line"><span class="comment">#issuse: FileContent–proc-sys-net-bridge-bridge-nf-call-iptables</span></span><br><span class="line"><span class="built_in">echo</span> 1 &gt; /proc/sys/net/bridge/bridge-nf-call-iptables</span><br><span class="line"><span class="built_in">echo</span> 1 &gt; /proc/sys/net/bridge/bridge-nf-call-ip6tables</span><br><span class="line"></span><br><span class="line"><span class="comment">#issuse: running with swap on is not supported. Please disable swap</span></span><br><span class="line"><span class="comment">#禁用当前的 swap</span></span><br><span class="line">sudo swapoff -a </span><br><span class="line"><span class="comment">#同时永久禁掉swap分区，打开如下文件注释掉swap那一行</span></span><br><span class="line">sudo vi /etc/fstab</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#issuse:  hostname  could not be reache</span></span><br><span class="line">3、修改linux主机的配置文件/etc/sysconfig/network 和 /etc/hosts</span><br><span class="line">     1).修改/etc/sysconfig/network里面的主机名字。</span><br><span class="line">          [root@bogon ~]<span class="comment">#  vi /etc/sysconfig/network</span></span><br><span class="line"></span><br><span class="line">               NETWORKING=yes</span><br><span class="line">               HOSTNAME=slave1                // 在这修改 hostname 为 xg</span><br><span class="line">     2).修改/etc/hosts里面的名字</span><br><span class="line">          [root@bogon ~]<span class="comment">#  vi /etc/hosts</span></span><br><span class="line">               127.0.0.1              slave1</span><br><span class="line">     3).不需要重启主机,最后在终端下执行：</span><br><span class="line">          [root@bogon ~]<span class="comment"># hostname slave1     // xg 为修改的hostname</span></span><br><span class="line">          </span><br><span class="line"></span><br><span class="line"><span class="comment">#issuse: kube-controller-manager CrashLoopBackOff</span></span><br><span class="line">Error: unknown flag: --horizontal-pod-autoscaler-use-rest-clients</span><br><span class="line">修改/etc/kubernetes/manifests/kube-controller-manager.yaml 参数</span><br><span class="line"></span><br><span class="line"><span class="comment">#issuse: k8s Error registering network: failed to acquire lease: node “master“ pod cidr not assigne </span></span><br><span class="line"><span class="comment"># 部署flannel网络插件时发现flannel一直处于CrashLoopBackOff状态，查看日志提示没有分配cidr</span></span><br><span class="line">vim /etc/kubernetes/manifests/kube-controller-manager.yaml</span><br><span class="line">增加参数：</span><br><span class="line">--allocate-node-cidrs=<span class="literal">true</span></span><br><span class="line">--cluster-cidr=10.244.0.0/16</span><br><span class="line">systemctl restart kubelet</span><br><span class="line"></span><br><span class="line"><span class="comment">#kubeadm 安装</span></span><br><span class="line">kubeadm init --pod-network-cidr=10.244.0.0/16  --config  .yaml</span><br><span class="line">kubeadm init --apiserver-advertise-address=192.168.111.100 --pod-network-cidr=192.168.0.0/16 </span><br><span class="line"></span><br><span class="line"><span class="comment">#安装flannel</span></span><br><span class="line">kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/k8s/" rel="tag"># k8s</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/11/20/hello-world/" rel="prev" title="Hello World">
+                  <i class="fa fa-chevron-left"></i> Hello World
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yex</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
