@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/discipline/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/discipline/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/discipline/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/discipline/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/discipline/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yoxxxx.gitee.io","root":"/discipline/","images":"/discipline/images","scheme":"Mist","darkmode":true,"version":"8.8.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/discipline/js/config.js"></script>
+<meta name="description" content="springboot 系列——国际化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="i18N">
+<meta property="og:url" content="http://yoxxxx.gitee.io/discipline/2021/11/25/i18n/index.html">
+<meta property="og:site_name">
+<meta property="og:description" content="springboot 系列——国际化">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-11-25T12:12:40.000Z">
+<meta property="article:modified_time" content="2021-11-25T12:24:37.581Z">
+<meta property="article:author" content="yex">
+<meta property="article:tag" content="SpringBoot">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://yoxxxx.gitee.io/discipline/2021/11/25/i18n/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://yoxxxx.gitee.io/discipline/2021/11/25/i18n/","path":"2021/11/25/i18n/","title":"i18N"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>i18N | </title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/discipline/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/discipline/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title"></h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#springboot%E9%BB%98%E8%AE%A4%E5%B0%B1%E6%94%AF%E6%8C%81%E5%9B%BD%E9%99%85%E5%8C%96%E3%80%82%E6%88%91%E4%BB%AC%E5%8F%AA%E9%9C%80%E8%A6%81%E5%8F%AA%E9%9C%80%E8%A6%81%E4%BD%9C%E7%9B%B8%E5%BA%94%E7%9A%84%E9%85%8D%E7%BD%AE%E5%8D%B3%E5%8F%AF%E3%80%82"><span class="nav-number">1.</span> <span class="nav-text">springboot默认就支持国际化。我们只需要只需要作相应的配置即可。</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">yex</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/discipline/archives/">
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoxxxx.gitee.io/discipline/2021/11/25/i18n/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/discipline/images/avatar.gif">
+      <meta itemprop="name" content="yex">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          i18N
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-11-25 20:12:40 / Modified: 20:24:37" itemprop="dateCreated datePublished" datetime="2021-11-25T20:12:40+08:00">2021-11-25</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>springboot 系列——国际化</p>
+<span id="more"></span>
+
+<h2 id="springboot默认就支持国际化。我们只需要只需要作相应的配置即可。"><a href="#springboot默认就支持国际化。我们只需要只需要作相应的配置即可。" class="headerlink" title="springboot默认就支持国际化。我们只需要只需要作相应的配置即可。"></a>springboot默认就支持国际化。我们只需要只需要作相应的配置即可。</h2><ol>
+<li><p>在resources下定义国际化配置文件，注意名称必须以messages开始。（在springboot中，当我们不修改配置时默认去解析名称以message开始的properties文件）</p>
+</li>
+<li><p>messages.properties （默认环境，无法确定语言环境时，解析该文件中的相应信息）</p>
+</li>
+<li><p>messages_zh_CN.properties（中文语言环境时，解析该文件中的相应信息）</p>
+</li>
+<li><p>messages_en_US.properties（英文语言环境时，解析该文件中的相应信息）</p>
+</li>
+<li><p>在三个配置文件中分别以<code>Key = Value</code>形式存储如下三条信息，如下：</p>
+<p>welcome = 这是一个支持国际化的项目。</p>
+<p>welcome = 这是一个支持国际化的项目。</p>
+<p>welcome = This is a project supporting internationalization.</p>
+</li>
+<li><p>前端页面通过#{welcome}获取国际化</p>
+</li>
+<li><p>后端使用国际化</p>
+<ol>
+<li><p>在这里首先我们需要获取到当前请求的Locale，有两种方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Locale locale = LocaleContextHolder.getLocale();</span><br><span class="line"></span><br><span class="line">Locale locale = RequestContextUtils.getLocale(request);</span><br></pre></td></tr></table></figure></li>
+<li><p>两种方式根据情况选择使用，下面是controller代码:</p>
+<ul>
+<li>```java<br>package com.example.i18n.controller;import org.springframework.beans.factory.annotation.Autowired;<br>import org.springframework.context.MessageSource;<br>import org.springframework.context.i18n.LocaleContextHolder;<br>import org.springframework.web.bind.annotation.RequestMapping;<br>import org.springframework.web.bind.annotation.RestController;/**<ul>
+<li><p>描述:<br>*</p>
+</li>
+<li><p>@author zhengql</p>
+</li>
+<li><p>@date 2018/9/21 10:54<br>*/<br>@RestController<br>public class JsonController {</p>
+<p>@Autowired<br>private MessageSource messageSource;</p>
+<p>@RequestMapping(“/ha”)<br>public String ha() {</p>
+<pre><code>return messageSource.getMessage(&quot;welcome&quot;, null, LocaleContextHolder.getLocale());
+</code></pre>
+<p>}<br>}</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">      </span><br><span class="line">      </span><br><span class="line"></span><br><span class="line">   </span><br><span class="line"></span><br><span class="line">3. 支持占位符国际化信息返回</span><br><span class="line"></span><br><span class="line">   messages.properties,messages_zh_CN.properties</span><br><span class="line"></span><br><span class="line">   ```java</span><br><span class="line">   hello=你好：&#123;0&#125; ， 你的验证码为 ：&#123;1&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<p>在Controlle中</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">messageSource.getMessage(<span class="string">&quot;hello&quot;</span>, <span class="keyword">new</span> Object[]&#123;<span class="string">&quot;zhangsan&quot;</span>,<span class="string">&quot;123456&quot;</span>&#125;,LocaleContextHolder.getLocale());</span><br></pre></td></tr></table></figure></li>
+<li><p>支持国际化的枚举类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span>  <span class="title">EnumSuccessOrError</span> </span>&#123;</span><br><span class="line">SUCCESS(<span class="number">0</span>, <span class="string">&quot;SUCCESS&quot;</span>),</span><br><span class="line">ERROR(<span class="number">1</span>, <span class="string">&quot;ERROR&quot;</span>);</span><br><span class="line">      </span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 返回状态码</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> statusCode;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 返回状态信息</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">private</span> String statusMsg;</span><br><span class="line">      </span><br><span class="line">EnumSuccessOrError(<span class="keyword">int</span> statusCode, String statusMsg) &#123;</span><br><span class="line">    <span class="keyword">this</span>.statusCode = statusCode;</span><br><span class="line">    <span class="keyword">this</span>.statusMsg = statusMsg;</span><br><span class="line">&#125;</span><br><span class="line">      </span><br><span class="line"><span class="keyword">private</span> MessageSource messageSource;</span><br><span class="line">      </span><br><span class="line"><span class="function"><span class="keyword">public</span> EnumSuccessOrError <span class="title">setMessageSource</span><span class="params">(MessageSource messageSource)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.messageSource = messageSource;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line">      </span><br><span class="line"><span class="comment">//通过静态内部类的方式注入bean，并赋值到枚举中</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">ReportTypeServiceInjector</span> </span>&#123;</span><br><span class="line">      </span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> MessageSource messageSource;</span><br><span class="line">      </span><br><span class="line">    <span class="meta">@PostConstruct</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">postConstruct</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (EnumSuccessOrError rt : EnumSet.allOf(EnumSuccessOrError.class))</span><br><span class="line">            rt.setMessageSource(messageSource);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">      </span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> the statusCode</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getStatusCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> statusCode;</span><br><span class="line">&#125;</span><br><span class="line">      </span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> the statusMsg，根据语言环境返回国际化字符串</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getStatusMsg</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> messageSource.getMessage(statusMsg,<span class="keyword">null</span>,statusMsg, LocaleContextHolder.getLocale());</span><br><span class="line">&#125;</span><br><span class="line">      </span><br><span class="line">      </span><br><span class="line">      </span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/discipline/tags/SpringBoot/" rel="tag"># SpringBoot</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/discipline/2021/11/20/kubernetes/" rel="prev" title="kubernetes">
+                  <i class="fa fa-chevron-left"></i> kubernetes
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yex</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/discipline/js/comments.js"></script><script src="/discipline/js/utils.js"></script><script src="/discipline/js/motion.js"></script><script src="/discipline/js/schemes/muse.js"></script><script src="/discipline/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
